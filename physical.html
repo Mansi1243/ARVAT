@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Fitness</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            background-color: rgb(99, 149, 224);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3a7bd5;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .athletics-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .athletics-section img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .athletics-section img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #selectedAthletics {
+            margin-top: 30px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 640px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        canvas {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Physical Fitness</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Progress Dashboard</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Select an Athletics Type</h2>
+        <div class="athletics-section">
+            <img src="images/shotput.jpg" alt="Shotput" onclick="selectAthletics('Shotput')">
+            <img src="images/javelin.jpg" alt="Javelin Throw" onclick="selectAthletics('Javelin Throw')">
+            <img src="images/discuss.jpg" alt="Discus Throw" onclick="selectAthletics('Discus Throw')">
+            <img src="images/running.jpg" alt="Running" onclick="selectAthletics('Running')">
+        </div>
+        <div id="selectedAthletics" class="hidden">
+            <h3 id="athleticsName"></h3>
+            <video id="video" autoplay playsinline></video>
+            <canvas id="output" width="640" height="480"></canvas>
+        </div>
+    </main>
+    <script src="logic.js"></script>
+</body>
+</html>
