@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1>Progress Dashboard</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Progress Dashboard</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="nutrition.html">Nutrition</a>
+             <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Progress</h2>
+        <div class="dashboard">
+            <h3>Physical Fitness Progress</h3>
+            <div class="goal-status">
+                <p>Daily Goal: <span id="dailyGoalStatus">0</span></p>
+                <p>Reps Completed: <span id="repsCompleted">0</span></p>
+            </div>
+
+            <h3>Progress Overview</h3>
+            <canvas id="progressPieChart" width="400" height="400"></canvas>
+
+            <h3>Weekly Progress</h3>
+            <canvas id="progressLineChart" width="400" height="200"></canvas>
+        </div>
+    </main>
+    <script href="logic.js"></script>
+</body>
+</html>

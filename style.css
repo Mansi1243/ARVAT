@@ -1,0 +1,434 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: hsl(177, 71%, 41%);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+}
+
+header button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: hsl(177, 71%, 41%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+header button:hover {
+    background-color: hsl(177, 71%, 41%);
+}
+
+nav {
+    background-color: #343a40;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    transition: background-color 0.3s;
+}
+
+nav a {
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+    margin: 0 1em;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: hsl(177, 71%, 41%);
+}
+
+.section {
+    padding: 2em;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.athletics-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.athletics-section img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    border: 2px solid hsl(177, 71%, 41%);
+    border-radius: 10px;
+    transition: transform 0.2s;
+    object-fit: cover;
+}
+
+.athletics-section img:hover {
+    transform: scale(1.05);
+}
+
+.login-background,
+.signup-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+}
+
+.login-section,
+.signup-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 2em;
+    border: 1px solid #0ba3bd;
+    border-radius: 5%;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-section input,
+.signup-section input,
+.nutrition-section input {
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#signupProfession {
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: hsl(177, 71%, 41%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: hsl(177, 71%, 41%);
+}
+
+.stopwatch {
+    font-size: 2em;
+    margin: 20px;
+}
+
+.goals {
+    margin-top: 20px;
+}
+
+.dashboard {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.dashboard h3 {
+    text-align: center;
+}
+
+.goal-status {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: hsl(177, 71%, 41%);
+    color: white;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+nav.dark-mode {
+    background-color: #333;
+}
+
+.section.dark-mode {
+    background-color: #222;
+}
+
+table.dark-mode,
+th.dark-mode,
+td.dark-mode {
+    border-color: #555;
+}
+
+th.dark-mode {
+    background-color: #444;
+}
+
+#home img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#mental {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#mental h2 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#mental p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#mental #chatbot-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#mental #chatbot-question {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#mental #chatbot-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#mental #chatbot-send {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#mental #chatbot-output {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.mental-wellness-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+}
+
+.mental-wellness-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Profile Section Styles */
+#profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+/* Social Feed Styles */
+#socialFeed textarea {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#socialFeed .post {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #socialFeed .post {
+    background-color: #333;
+    color: #fff;
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+header, nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header and nav are above other content */
+}
+
+header h1, header p, nav a {
+    margin: 0;
+    padding: 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Main Content Area */
+#main-content {
+    margin-top: 60px; /* Space for fixed header and nav */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Additional Styles */
+.hidden {
+    display: none;
+}
+
+.section {
+    padding: 20px;
+    margin: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
