@@ -3,81 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Wellness - ActiveMindAI</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7fa;
-            color: #333;
-        }
+    <title>Mental Wellness</title>
+    <link rel="stylesheet" href="style.css">
 
-        header {
-            background: url('mental.jpg') center/cover no-repeat;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: inline-block;
-            padding: 10px 20px;
-        }
-
-        main {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .feature {
-            margin: 20px 0;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #2c3e50;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-    </style>
 </head>
 <body>
     <header>
         <h1>Mental Wellness</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Progress Dashboard</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="nutrition.html">Nutrition</a>
+             <a href="profile.html">Profile</a>
+        </nav>
     </header>
 
     <main>
-        <p>Boost your mental health with AI-driven support. Our chatbot provides motivational messages, tips, and relaxation therapy to help you manage stress and enhance your well-being.</p>
+        <h2>Relax and Rejuvenate</h2>
+        <p>Enjoy meditation with peaceful music and chat with our AI Mentor for mental wellness recommendations.</p>
+        <audio id="meditationMusic" src="audio/peaceful_music.mp3" preload="auto"></audio>
+        <select id="musicSelect">
+            <option value="birds.mp3">Birds</option>
+            <option value="deep_meditation.mp3">Deep Meditation</option>
+            <option value="piano.mp3">Piano</option>
+        </select>
+        <button onclick="startMeditation()">Start Meditation</button>
+        <button onclick="stopMeditation()">Stop Meditation</button>
+        <div id="timerDisplay">00:00</div>
 
-        <div class="feature">
-            <h2>Relaxation Therapy</h2>
-            <p>Engage in virtual experiences and activities to reduce stress and enhance relaxation.</p>
-        </div>
-
-        <div class="feature">
-            <h2>Mental Health Chat Assistance</h2>
-            <p>Get support from a motivational chat assistant designed to address your mental wellness needs.</p>
+        <div id="chatbot-container">
+            <h3>AI Chatbot Assessment</h3>
+            <p>How are you feeling today?</p>
+            <input id="chatbot-input" type="text" placeholder="Type your answer...">
+            <button id="chatbot-send">Send</button>
+            <div id="chatbot-output"></div>
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2024 ActiveMindAI. All rights reserved.</p>
-    </footer>
+    <script href="logic.js"></script>
 </body>
 </html>
