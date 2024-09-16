@@ -3,81 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Connections - ActiveMindAI</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7fa;
-            color: #333;
-        }
+    <title>Social Connection</title>
+    <link rel="stylesheet" href="style.css">
 
-        header {
-            background: url('social.jpg') center/cover no-repeat;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: inline-block;
-            padding: 10px 20px;
-        }
-
-        main {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .feature {
-            margin: 20px 0;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #2c3e50;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>Social Connections</h1>
+        <h1>Social Connection</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="physical.html">Physical Fitness</a>
+            <a href="mental.html">Mental Wellness</a>
+            <a href="social.html">Social Connection</a>
+            <a href="dashboard.html">Progress Dashboard</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="mood.html">Mood Tracker</a>
+            <a href="profile.html">Profile</a>
+        </nav>
     </header>
 
     <main>
-        <p>Build and maintain social connections through live streaming, blogging, and collaborations. Stay connected and inspired by influencers and a supportive community.</p>
-
-        <div class="feature">
-            <h2>Live Streaming & Content Creation</h2>
-            <p>Share your journey and connect with others through live videos and blogs.</p>
-        </div>
-
-        <div class="feature">
-            <h2>Influencer Collaboration</h2>
-            <p>Engage with influencers to stay motivated and learn new fitness and wellness tips.</p>
-        </div>
+        <h2>Connect with Others</h2>
+        <p>Create and share your fitness journey with others through video and posts.</p>
+        <video id="recordedVideo" controls></video><br>
+        <button id="startRecording">Start Recording</button>
+        <button id="stopRecording">Stop Recording</button>
+        <button id="uploadVideo">Upload Video</button>
     </main>
-
-    <footer>
-        <p>&copy; 2024 ActiveMindAI. All rights reserved.</p>
-    </footer>
+    <script href="logic.js"></script>
 </body>
 </html>
+s
