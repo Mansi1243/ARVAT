@@ -35,6 +35,7 @@
             background-color: #3a7bd5;
             padding: 15px 20px;
             text-align: center;
+            display: none; /* Initially hidden */
         }
 
         nav ul {
@@ -66,6 +67,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 30px;
+            display: none; /* Initially hidden */
         }
 
         section {
@@ -75,17 +77,23 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
+            width: auto; /* Auto-width for flexible sizing */
+            height: auto; /* Auto-height for flexible sizing */
         }
 
         section:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            height: auto;
+            width: auto;        
         }
 
         section h2 {
             color: #4a90e2;
             font-size: 2rem;
             margin-bottom: 15px;
+            height: auto;
+            width: auto;
         }
 
         footer {
@@ -98,6 +106,47 @@
             width: 100%;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
+
+        /* Login and Signup Styles */
+        .login-section, .signup-section {
+            background: #fff;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .login-section {
+            display: block; /* Shown by default */
+        }
+
+        .signup-section {
+            display: none; /* Hidden by default, shown when clicked */
+        }
+
+        input[type="text"], input[type="password"], input[type="email"], input[type="date"], select, input[type="file"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #2a6a9e;
+        }
     </style>
 </head>
 <body>
@@ -108,25 +157,56 @@
 
     <nav>
         <ul>
-            <li><a href="fitness.html">Physical Fitness</a></li>
-            <li><a href="mental.html">Mental Wellness</a></li>
-            <li><a href="social.html">Social Connections</a></li>
+            <li><a href="dashboard.html">PROGRESS</a></li>
+            <li><a href="leaderboard.html">LEADERBOARD</a></li>
+            <li><a href="challenges.html">DAILY CHALLENGES</a></li>
         </ul>
     </nav>
 
+    <!-- Login Section -->
+    <div class="login-section" id="loginSection">
+        <h2>Login</h2>
+        <input type="text" id="loginUsername" placeholder="Enter Username"><br>
+        <input type="password" id="loginPassword" placeholder="Enter Password"><br>
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up here</a></p>
+    </div>
+
+    <!-- Signup Section -->
+    <div class="signup-section" id="signupSection">
+        <h2>Sign Up</h2>
+        <input type="text" id="signupUsername" placeholder="Choose Username"><br>
+        <input type="password" id="signupPassword" placeholder="Choose Password"><br>
+        <input type="email" id="signupEmail" placeholder="Enter Email ID"><br>
+        <input type="date" id="signupDob" placeholder="Date of Birth"><br>
+        <select id="signupProfession">
+            <option value="">Select Profession</option>
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Engineer">Engineer</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Other">Other</option>
+        </select><br>
+        <input type="file" id="signupProfilePicture" accept="image/*"><br>
+        <button onclick="signup()">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </div>
+
+    <!-- Main Content -->
     <main>
+        <!-- Sections -->
         <section>
-            <h2>Physical Fitness</h2>
+            <a href="physical.html"><h2>Physical Fitness</h2></a>
             <p>Click to explore personalized workouts with real-time pose detection and correction to keep you fit and active.</p>
         </section>
 
         <section>
-            <h2>Mental Wellness</h2>
+            <a href="physical.html"><h2>Mental Wellness</h2></a>
             <p>Discover strategies to boost your mental health through guided relaxation therapy and motivational support.</p>
         </section>
 
         <section>
-            <h2>Social Connections</h2>
+            <a href="physical.html"><h2>Social Connections</h2></a>
             <p>Learn how to build and maintain meaningful social connections through live streams, blogging, and community engagement.</p>
         </section>
     </main>
@@ -134,5 +214,71 @@
     <footer>
         <p>&copy; 2024 ActiveMindAI. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript for login/signup logic -->
+    <script>
+        // Check if user is logged in (this will be stored in localStorage)
+        function checkLoginStatus() {
+            const isLoggedIn = localStorage.getItem('loggedIn');
+            if (isLoggedIn === 'true') {
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('signupSection').style.display = 'none';
+                document.querySelector('main').style.display = 'block';
+                document.querySelector('nav').style.display = 'block';
+            } else {
+                document.getElementById('loginSection').style.display = 'block';
+                document.querySelector('main').style.display = 'none';
+                document.querySelector('nav').style.display = 'none';
+            }
+        }
+
+        // Signup function
+        function signup() {
+            const username = document.getElementById('signupUsername').value;
+            const password = document.getElementById('signupPassword').value;
+            const email = document.getElementById('signupEmail').value;
+
+            if (username && password && email) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+                localStorage.setItem('loggedIn', 'true'); // Automatically log in after signup
+                alert('Sign up successful!');
+                checkLoginStatus();
+            } else {
+                alert('Please fill in all fields to sign up.');
+            }
+        }
+
+        // Login function
+        function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            if (username === storedUsername && password === storedPassword) {
+                localStorage.setItem('loggedIn', 'true');
+                alert('Login successful!');
+                checkLoginStatus();
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        }
+
+        // Show signup form
+        function showSignup() {
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('signupSection').style.display = 'block';
+        }
+
+        // Show login form
+        function showLogin() {
+            document.getElementById('signupSection').style.display = 'none';
+            document.getElementById('loginSection').style.display = 'block';
+        }
+
+        // Check login status on page load
+        window.onload = checkLoginStatus;
+    </script>
 </body>
 </html>
